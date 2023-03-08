@@ -1,8 +1,15 @@
-import string
+import os
+import string 
 
-# Open the file for reading
-filename = input("Enter the name of the file: ")
-with open(filename, 'r') as file:
+
+# Get the current working directory
+cwd = os.getcwd()
+
+# Join the current working directory with the filename
+filename = os.path.join(cwd, "file.txt")
+
+# Open the file
+with open(filename, "r") as file:
     # Read the contents of the file and convert to lowercase
     contents = file.read().lower()
 
@@ -16,5 +23,3 @@ with open(filename, 'r') as file:
 
     # Display the word count
     print("The file contains {} words.".format(num_words))
-    
-    #FOR MORE TUTORIALS/SCRIPTS PLEASE VISIT https://pycode.pro
